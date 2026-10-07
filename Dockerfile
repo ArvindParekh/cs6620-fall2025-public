@@ -3,5 +3,6 @@ WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-EXPOSE 5000
+# app listens on 3000 btw, not 5000 ;)
+EXPOSE 3000
 CMD [ "python", "app.py" ]
