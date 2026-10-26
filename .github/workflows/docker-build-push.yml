@@ -42,4 +42,4 @@ jobs:
             --instance-ids ${{ secrets.EC2_INSTANCE_ID }} \
             --document-name "AWS-RunShellScript" \
             --comment "Deploy latest cs6620-app from Docker Hub" \
-            --parameters 'commands=["docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cs6620-app:latest","docker stop cs6620-app || true","docker rm cs6620-app || true","docker run -d --restart unless-stopped -p 80:5000 --name cs6620-app ${{ secrets.DOCKERHUB_USERNAME }}/cs6620-app:latest"]'
+            --parameters 'commands=["docker pull ${{ secrets.DOCKERHUB_USERNAME }}/cs6620-app:latest","docker stop cs6620-app || true","docker rm cs6620-app || true","docker run -d --restart unless-stopped -p 80:3000 --name cs6620-app ${{ secrets.DOCKERHUB_USERNAME }}/cs6620-app:latest"]'
